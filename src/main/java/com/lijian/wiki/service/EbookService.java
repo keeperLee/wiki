@@ -7,6 +7,7 @@ import com.lijian.wiki.mapper.DemoMapper;
 import com.lijian.wiki.mapper.EbookMapper;
 import com.lijian.wiki.request.EbookReq;
 import com.lijian.wiki.response.EbookResp;
+import com.lijian.wiki.util.CopyUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -27,11 +28,7 @@ public class EbookService {
         List<Ebook> ebookList = ebookMapper.selectByExample(ebookExample);
 
         List<EbookResp> respList = new ArrayList<>();
-        for (Ebook ebook: ebookList) {
-            EbookResp ebookResp = new EbookResp();
-            BeanUtils.copyProperties(ebook,ebookResp);
-            respList.add(ebookResp);
-        }
-        return respList;
+
+        return CopyUtil.copyList(ebookList,EbookResp.class);
     }
 }
