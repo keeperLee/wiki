@@ -40,6 +40,6 @@
                              targetPackage="com.lijian.wiki.mapper"
                              type="XMLMAPPER"/>
 
-        <table tableName="demo" domainObjectName="Demo"/>
+        <table tableName="ebook"/>
     </context>
 </generatorConfiguration>

@@ -25,22 +25,22 @@ public class TestController {
     @Value("${test.hello:defaultValue}")
     private String testHello;
 
-    @RequestMapping(value = "hello",method = RequestMethod.GET)
+    @RequestMapping(value = "/hello",method = RequestMethod.GET)
     public String hello(){
         return "helloworld " +testHello;
     }
 
-    @RequestMapping(value = "hello-post",method = RequestMethod.POST)
+    @RequestMapping(value = "/hello-post",method = RequestMethod.POST)
     public String helloPost(){
         return "helloworld-post";
     }
 
-    @RequestMapping(value = "hello-post-param",method = RequestMethod.POST)
+    @RequestMapping(value = "/hello-post-param",method = RequestMethod.POST)
     public String helloPostParam(String name){
         return "helloworld-post-param" + name;
     }
 
-    @RequestMapping(value = "test-list",method = RequestMethod.GET)
+    @RequestMapping(value = "/test-list",method = RequestMethod.GET)
     public List<Test> testList(String name){
         return testService.list();
     }
