@@ -1,4 +1,4 @@
-GET http://localhost:8088/hello
+GET http://localhost:5678/hello
 Accept: application/json
 
 ###
@@ -14,5 +14,10 @@ POST http://localhost:8088/hello-post-param
 Content-Type: application/x-www-form-urlencoded
 
 name=Test
+
+###
+
+GET http://localhost:5678/test-list
+Accept: application/json
 
 ###
